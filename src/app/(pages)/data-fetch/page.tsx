@@ -15,7 +15,7 @@ type data = {
     _rev: string,
     _updatedAt: string,
     _type: string,
-    mainImage: {
+    image: {
         _type: string,
         asset: {
             _ref: string,
@@ -70,7 +70,7 @@ export default function page() {
                     </tr>
                 </thead>
                 <tbody>
-                    {posts.map((post: any) => (
+                    {posts.map((post: data) => (
                         <tr className='border' key={post._id}>
                             <td className='border'>
                                 <Image src={urlFor(post.image).url()} alt="" width={100} height={100} className='w-20 h-20' />
