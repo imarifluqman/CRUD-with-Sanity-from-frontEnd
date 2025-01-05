@@ -2,7 +2,7 @@
 import { client } from "@/sanity/lib/client"
 import React, { useState } from "react"
 
-function page() {
+function Page() {
     const [message, setMessage] = useState<string>('')
     const [email, setEmail] = useState<string>('')
     const [name, setName] = useState<string>('')
@@ -51,4 +51,4 @@ function page() {
     )
 }
 
-export default page
+export default Page

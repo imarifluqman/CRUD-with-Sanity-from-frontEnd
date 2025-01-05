@@ -25,7 +25,7 @@ type data = {
 
 }
 
-export default function page() {
+export default function Page() {
     const [posts, setPosts] = useState<data[]>([])
 
 

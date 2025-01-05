@@ -3,7 +3,7 @@ import { client } from '@/sanity/lib/client';
 import React, { useEffect, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation';
 
-function page() {
+function Page() {
     const [message, setMessage] = useState<string>('')
     const [email, setEmail] = useState<string>('')
     const [name, setName] = useState<string>('')
@@ -69,4 +69,4 @@ function page() {
     )
 }
 
-export default page
+export default Page
