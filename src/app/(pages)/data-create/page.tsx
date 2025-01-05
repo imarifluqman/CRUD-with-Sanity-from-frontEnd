@@ -10,7 +10,6 @@ function Page() {
 
     const submit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log(file);
         if (!file) return;
         const asset = await client.assets.upload('image', file, {
             filename: file.name, // Optional: Provide a custom filename

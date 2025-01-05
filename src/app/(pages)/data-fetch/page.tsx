@@ -32,7 +32,6 @@ export default function Page() {
     async function getPost() {
         const query = '*[_type == "post-form"] | order(_createdAt desc)';
         const posts = await client.fetch(query);
-        console.log(posts);
 
         setPosts(posts)
     }
