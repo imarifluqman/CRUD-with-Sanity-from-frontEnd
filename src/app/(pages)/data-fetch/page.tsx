@@ -19,10 +19,15 @@ type data = {
 export default function page() {
     const [posts, setPosts] = useState<data[]>([])
 
-    const query = '*[_type == "contact-form"]'
     async function getPost() {
+        console.log('getPost');
+
+        const query = '*[_type == "contact-form"]'
+
         const posts = await client.fetch(query)
         setPosts(posts)
+
+
     }
 
 
@@ -30,18 +35,9 @@ export default function page() {
 
 
     useEffect(() => {
+        console.log('useEffect');
         getPost()
-
-        const subscription = client.live.events().subscribe((event) => {
-            console.log(event);
-            getPost()
-        });
-
-        return () => {
-            subscription.unsubscribe()
-        }
-
-    }, [posts])
+    }, [])
 
 
 
