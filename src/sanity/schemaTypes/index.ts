@@ -1,6 +1,6 @@
 import { type SchemaTypeDefinition } from "sanity";
 
-import contactForm from "./contact-form";
+import postForm from "./post-form";
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [contactForm],
+  types: [postForm],
 };
