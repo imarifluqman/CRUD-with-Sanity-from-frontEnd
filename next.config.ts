@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["cdn.sanity.io"],
   },
+  crossOrigin: 'anonymous',
 };
 
 export default nextConfig;

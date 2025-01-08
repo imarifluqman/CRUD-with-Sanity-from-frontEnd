@@ -25,6 +25,8 @@ type data = {
 
 }
 
+
+
 export default function Page() {
     const [posts, setPosts] = useState<data[]>([])
 
@@ -54,9 +56,11 @@ export default function Page() {
     }
 
 
+  
 
     return (
         <div className="w-full h-[100vh] flex flex-col  items-center">
+    
             <h2 className='text-2xl text-red-600 font-bold p-2'>Data Fatch</h2>
             <table className="w-[90%] mx-auto border">
                 <thead className='border bg-slate-600 text-white'>

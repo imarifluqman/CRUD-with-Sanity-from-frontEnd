@@ -38,6 +38,7 @@ function Page() {
     useEffect(() => {
         async function getPost() {
             const posts = await client.fetch('*[_type == "post-form" && _id == $id][0]', { id: id })
+           
             setName(posts.name)
             setEmail(posts.email)
             setMessage(posts.message)
@@ -52,12 +53,16 @@ function Page() {
 
     const submit = async (e: React.FormEvent) => {
         e.preventDefault();
+        
         let img;
+
         if (file) {
             img = await client.assets.upload('image', file, {
                 filename: file.name, // Optional: Provide a custom filename
             });
         }
+
+        
         await client.patch(id).set({
             name,
             email,
