@@ -56,39 +56,30 @@ export default function Page() {
     }
 
 
-  
+
 
     return (
         <div className="w-full h-[100vh] flex flex-col  items-center">
-    
+
             <h2 className='text-2xl text-red-600 font-bold p-2'>Data Fatch</h2>
-            <table className="w-[90%] mx-auto border">
-                <thead className='border bg-slate-600 text-white'>
-                    <tr className='border'>
-                        <th className='border'>Image</th>
-                        <th className='border'>Name</th>
-                        <th className='border'>Email</th>
-                        <th className='border'>Message</th>
-                        <th className='border'>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {posts.map((post: data) => (
-                        <tr className='border' key={post._id}>
-                            <td className='border'>
-                                <Image src={urlFor(post.image).url()} alt="" width={100} height={100} className='w-20 h-20' />
-                            </td>
-                            <td className='border'>{post.name}</td>
-                            <td className='border'>{post.email}</td>
-                            <td className='border'>{post.message}</td>
-                            <td className='border'>
-                                <Link href={`/${post._id}`} className='p-2 mx-2 bg-green-600 text-white hover:bg-green-800'>Update</Link>
-                                <button className=' p-2 bg-red-600 text-white hover:bg-red-800' onClick={() => handleDelete(post._id)}>Delete</button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+
+            <div className=' flex flex-wrap justify-center items-start gap-4'>
+                {posts.map((post: data) => (
+                    <div className='lg:w-[400px] w-[90%]  border' key={post._id}>
+                        <div className=''>
+                            <Image src={urlFor(post.image).url()} alt="" width={1000} height={1000} className='w-full' />
+                        </div>
+                        <div className=''>Name : {post.name}</div>
+                        <div className=''>Email : {post.email}</div>
+                        <div className=''>Message : {post.message}</div>
+                        <div className=''>
+                            <Link href={`/${post._id}`} className='p-2 mx-2 bg-green-600 text-white hover:bg-green-800'>Update</Link>
+                            <button className=' p-2 bg-red-600 text-white hover:bg-red-800' onClick={() => handleDelete(post._id)}>Delete</button>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
         </div>
     )
 }

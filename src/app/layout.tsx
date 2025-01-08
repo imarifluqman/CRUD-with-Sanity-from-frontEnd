@@ -34,7 +34,7 @@ export default function RootLayout({
             <li><Link href="/">Home</Link></li>
             <li><Link href="/data-create">Create</Link></li>
             <li><Link href="/data-fetch">Fetch</Link></li>
-            <li><Link href="/zod-form">Zod-Form</Link></li>
+            <li><Link href="/zod-form">Products</Link></li>
           </ul>
         </nav>
         {children}
