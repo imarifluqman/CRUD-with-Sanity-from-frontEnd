@@ -1,7 +1,6 @@
 "use client";
 import { client } from "@/sanity/lib/client";
 import { useState } from "react";
-import { at, defineMigration, del, setIfMissing, unset } from 'sanity/migrate'
 
 interface Product {
     id: number;
@@ -32,7 +31,7 @@ function page() {
             const arrayBuffer = await response.arrayBuffer();
             const buffer = Buffer.from(arrayBuffer);
             const asset = await client.assets.upload('image', buffer);
-            
+
             const sanityData = {
                 ...product,
                 image: {
@@ -45,7 +44,7 @@ function page() {
                 _id: product.id.toString(),
                 _type: 'products'
             }
-            return client.createOrReplace(sanityData);;
+            return client.createOrReplace(sanityData);
         })
 
         setIsLoaded(false);
