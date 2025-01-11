@@ -28,7 +28,7 @@ function Page() {
         try {
             const response = await fetch('https://fakestoreapi.com/products/');
             const data: Product[] = await response.json();
-             data.map(async (product) => {
+          const promiseAll =  data.map(async (product) => {
                 const response = await fetch(product.image);
                 const arrayBuffer = await response.arrayBuffer();
                 const buffer = Buffer.from(arrayBuffer);
@@ -49,6 +49,7 @@ function Page() {
 
                 return client.createOrReplace(sanityData);
             });
+            await Promise.all(promiseAll);
 
         } catch (error) {
             console.error('Error uploading products:', error);
