@@ -28,7 +28,7 @@ function Page() {
         try {
             const response = await fetch('https://fakestoreapi.com/products/');
             const data: Product[] = await response.json();
-            const uploadPromises = data.map(async (product) => {
+             data.map(async (product) => {
                 const response = await fetch(product.image);
                 const arrayBuffer = await response.arrayBuffer();
                 const buffer = Buffer.from(arrayBuffer);
