@@ -50,7 +50,6 @@ function Page() {
                 return client.createOrReplace(sanityData);
             });
 
-            await Promise.all(uploadPromises);
         } catch (error) {
             console.error('Error uploading products:', error);
         } finally {
